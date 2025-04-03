@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
 #include <random>
+#include "std_lib_facilities.h"
+
 class Maze{
     private:
     int size;
@@ -11,8 +13,7 @@ class Maze{
     Maze(int size);
 
     int rand(int lowerlimits, int upperlimits);
-    ~Maze();
-   
+
     Maze(const Maze&) = delete;
     int getsize() const;
  

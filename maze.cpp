@@ -11,18 +11,12 @@ int Maze::rand(int lowerlimit, int upperlimit){
 }
 
 
-Maze::Maze(int size):size(size){
-    maze = new int*[size];
-    for(int i = 0; i <size; i++){
-        maze[i] = new int[size];
-        for(int j = 0; j < size; j++){
-            maze[i][j] = 0;
-        }
-    }
+Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)){// fyller først hele matrisen med 0
+    
     std::cout << "matrix made/n";
-    // fyller først hele matrisen med 0
+    
     int j = rand(0, size);
-    maze[0][j] = 1; //Velger en start plass tilfeldig
+    maze.at(0).at(j) = 1; //Velger en start plass tilfeldig
     std::cout << "filled with 0/n";
    
 
@@ -31,32 +25,36 @@ Maze::Maze(int size):size(size){
     int n = 0;
     //i og j er nå med på å holde styr over hvor vi er i matrisen. skal være indexen vår
     while(a){
-        std::cout << "Start generating path/n";
+        std::cout << "Start generating path" << endl;
         n = rand(0, 5);
-    
+        try{
         if(n == 0 or n == 4 or n == 5){ //et steg fram
-                maze[i+1][j]= 1;
+                maze.at(i+1).at(j)= 1;
                 i += 1;
         }else if(n == 1){  // et steg til høyre
-                maze[i][j + 1] = 1;
+                maze.at(i).at(j +1) = 1;
                 j += 1;
            
         }else if(n == 2){ // et steg til venstre
             
-                maze[i][j-1] = 1;
+                maze.at(i).at(j-1) = 1;
                 j -= 1;
            
         }else if(n == 3){ // et steg tilbake
-                maze[i-1][j] = 1;
+                maze.at(i-1).at(j) = 1;
                 i -= 1;
+        } }
+        catch(...){
+          continue;  
         }
+        cout << "Generating path"<< endl;
 
         for(int k; k<size; k++){//sjekker om vi har kommet i mål ved at en rute i siste rad er blitt 1
-            if(maze[size][k] == 1){
+            if(maze.at(size).at(k) == 1){
                 a = false;
             }
         } 
-        std::cout<< maze[i][j] << std::endl;     
+        
     }
     int m = 0;
     for(int i = 0; i < rand(20, 50); i++){
@@ -67,13 +65,6 @@ Maze::Maze(int size):size(size){
 
 }
 
-Maze::~Maze(){
-    for(int i = 0; i < size; i++){
-        delete[] maze[i];
-    }
-    delete[] maze;
-    
-}
 
 
 int Maze::getsize() const {
@@ -84,7 +75,7 @@ std::ostream& operator<<(std::ostream& os, const Maze& rhs){
     int size = rhs.getsize();
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
-            os << rhs.maze[i][j] << " ";  
+            os << rhs.maze.at(i).at(j) << " ";  
             
         }
         os << std::endl;  
