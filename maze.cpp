@@ -56,10 +56,10 @@ Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)){// fyller
         } 
         
     }
-    int m = 0;
-    for(int i = 0; i < rand(20, 50); i++){
-         m = rand(3, 20);   
-    }
+    // int m = 0;
+    // for(int i = 0; i < rand(20, 50); i++){
+    //      m = rand(3, 20);   
+    // }
 
 
 
