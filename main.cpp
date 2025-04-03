@@ -8,10 +8,11 @@
 
 //------------------------------------------------------------------------------'
 
-// C++ programs start by executing the function main
+// C++ programs start by Pxecuting the function main
 int main() {
     // Show a nice message in the Terminal window
     cout << "Hello, World!" << endl;
+    cout << "halla gamers" << endl;
 
     // This lets the operating system (Windows, Mac, Linux, etc.) know that the program
     // did not encounter any errors
