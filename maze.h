@@ -6,10 +6,9 @@
 class Maze{
     private:
     int size;
-    std::vector<std::vector<int>> maze;
-
-
+    
     public:
+    std::vector<std::vector<int>> maze;
     Maze(int size);
 
     int rand(int lowerlimits, int upperlimits);

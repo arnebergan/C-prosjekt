@@ -2,10 +2,9 @@
 #include "std_lib_facilities.h"
 
 int main() {
-    cout << "Hello, World!" << endl;
-    cout << "halla gamers" << endl;
+    cout << "new start: " << endl;
 
-    Maze maze1 (5);
-    
+    Maze maze1 (15);
+    cout << '\n' << maze1;
     return 0;
 }

@@ -6,26 +6,21 @@ int Maze::rand(int lowerlimit, int upperlimit){
     std:: uniform_int_distribution<int> distribution(lowerlimit, upperlimit);
     int n = distribution(generator);
     return n;
-
-
 }
 
-
-Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)){// fyller først hele matrisen med 0
-    
-    std::cout << "matrix made/n";
+Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)){// fyller først hele matrisen med 0  
+    std::cout << "matrix made\n";
     
     int j = rand(0, size);
     maze.at(0).at(j) = 1; //Velger en start plass tilfeldig
-    std::cout << "filled with 0/n";
+    std::cout << "filled with 0\n";
    
-
     bool a = true;
     int i = 0;
     int n = 0;
-    //i og j er nå med på å holde styr over hvor vi er i matrisen. skal være indexen vår
+    // i og j er nå med på å holde styr over hvor vi er i matrisen. skal være indexen vår
     while(a){
-        std::cout << "Start generating path" << endl;
+        std::cout << "new point" << endl;
         n = rand(0, 5);
         try{
         if(n == 0 or n == 4 or n == 5){ //et steg fram
@@ -43,25 +38,28 @@ Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)){// fyller
         }else if(n == 3){ // et steg tilbake
                 maze.at(i-1).at(j) = 1;
                 i -= 1;
-        } }
+        } 
+        }
         catch(...){
+            cout << "Gikk utenfor mappet\t";
           continue;  
         }
-        cout << "Generating path"<< endl;
-
-        for(int k; k<size; k++){//sjekker om vi har kommet i mål ved at en rute i siste rad er blitt 1
-            if(maze.at(size).at(k) == 1){
+        cout << "i er:   " << i <<"\t";
+        cout << "j er:   " << j <<"\t";
+        
+        for(int k=0; k<size; k++){//sjekker om vi har kommet i mål ved at en rute i siste rad er blitt 1
+            if(maze.at(size-1).at(k) == 1){
+                
                 a = false;
+                break;
             }
         } 
-        
     }
+
     int m = 0;
     for(int i = 0; i < rand(20, 50); i++){
          m = rand(3, 20);   
     }
-
-
 
 }
 
