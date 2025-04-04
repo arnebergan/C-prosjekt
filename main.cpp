@@ -4,7 +4,7 @@
 #include "maze.h"
 
 int main() {
-    cout << "Hello, World!" << endl;
+    cout << "Hello, World! hei" << endl;
     
     cout << "halla gamers" << endl;
 
