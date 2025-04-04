@@ -19,28 +19,29 @@ Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)){// fyller
     int i = 0;
     int n = 0;
     // i og j er nå med på å holde styr over hvor vi er i matrisen. skal være indexen vår
+    cout << "starting to make maze: " << endl;
     while(a){
         std::cout << "new point" << endl;
-        n = rand(0, 5);
+        n = rand(0, 8);
         try{
-        if(n == 0 or n == 4 or n == 5){ //et steg fram
+        if(n == 0 || n == 4 || n == 5 || n == 8){ //et steg fram
                 maze.at(i+1).at(j)= 1;
                 i += 1;
-        }else if(n == 1){  // et steg til høyre
-                maze.at(i).at(j +1) = 1;
+        }else if(n == 1|| n == 6){  // et steg til høyre
+                maze.at(i).at(j+1) = 1;
                 j += 1;
            
-        }else if(n == 2){ // et steg til venstre
+        }else if(n == 2 ||  n == 7){ // et steg til venstre
             
                 maze.at(i).at(j-1) = 1;
                 j -= 1;
            
-        }else if(n == 3){ // et steg tilbake
+        }else if(n == 3 ){ // et steg tilbake
                 maze.at(i-1).at(j) = 1;
                 i -= 1;
         } 
         }
-        catch(...){
+        catch(...){ // Hvis den er ute av indeksene skal den bare fortsette og prøve på nytt
             cout << "Gikk utenfor mappet\t";
           continue;  
         }
@@ -49,7 +50,6 @@ Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)){// fyller
         
         for(int k=0; k<size; k++){//sjekker om vi har kommet i mål ved at en rute i siste rad er blitt 1
             if(maze.at(size-1).at(k) == 1){
-                
                 a = false;
                 break;
             }
@@ -58,12 +58,9 @@ Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)){// fyller
 
     int m = 0;
     for(int i = 0; i < rand(20, 50); i++){
-         m = rand(3, 20);   
+        m = rand(3, 20);   
     }
-
 }
-
-
 
 int Maze::getsize() const {
     return size;
