@@ -1,6 +1,6 @@
 #include "character.h"
 
-bool Character::checkIfOutsideMaze (Maze maze){
+//bool Character::checkIfOutsideMaze (Maze maze){
     
-}
+//}
 
