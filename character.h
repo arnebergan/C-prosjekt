@@ -6,14 +6,14 @@
 class Character{
 
     private:
-    std::vector<int> character_posisjon; 
-    int pos_x;
-    int pos_y;   // Posisjon 2, i og j.
+    int x;
+    int y;    // Posisjon 2, i og j.
     public:
-    Character (Maze maze, std::vector<int> character_posisjon);
-    int getPos_x() const;
-    int getPos_y() const;
-    bool checkIfOutsideMaze (Maze maze,  const int& pos_x, const int& pos_y);
+    Character (Maze maze, int x, int y);
+    int getX ();
+    int getY();
+    bool checkIfOutsideMaze (Maze maze, int x, int y);
+    bool checkIfWin (Maze maze, int y);
     void draw();
     void move();
 
