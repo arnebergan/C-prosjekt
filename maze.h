@@ -14,7 +14,6 @@ class Maze{
 
     int rand(int lowerlimits, int upperlimits);
 
-    Maze(const Maze&) = delete;
     int getsize() const;
     int box_iteration(int Row, int Colum);
     void AddToPath(int Row, int Colum);

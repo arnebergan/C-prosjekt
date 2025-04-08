@@ -1,7 +1,7 @@
 #include "character.h"
 
 
-int Character::getY(){
+int Character::getX(){
     return x;
 }
 
