@@ -91,16 +91,6 @@ Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)){// fyller
         // }
             
 }   
-        
-
-                
-            
-    
-    
-
-
-
-
 
 int Maze::getsize() const {
     return size;
@@ -155,7 +145,6 @@ void Maze::AddToPath(int Row, int Colum) {
                 Colum -= 1;
             }
 
-            
         }
         catch (...) {
             // Hvis vi går utenfor grensene, bare hopp til neste iterasjon
@@ -164,12 +153,8 @@ void Maze::AddToPath(int Row, int Colum) {
         if(box_iteration(Row, Colum) >= 2 or Row == 1 or Colum == 1 or Row == (size - 1) or Colum ==(size - 1)){
             a = false;
         }
-        
     }
-
-    
 }
-
 
 bool Maze::checkIfOneOrZero(int x_pos, int y_pos) const{
     if (maze.at(x_pos).at(y_pos) == 1){
