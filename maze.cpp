@@ -63,33 +63,32 @@ Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)){// fyller
     }
     
 
-        // for(int a = 0; a < index_integers.size(); ++a){ //genererer tilfeldige blindveier
+  
+        for(int i = 0; i < size; ++i){ //Forslag til tilfeldig generering 
+            for(int j = 0; j < size; ++j){
+                if(maze.at(i).at(j) == 1){
+                    continue;
+                }
+                int n = rand(1, 5);
+                if(n == 1 || n == 2){
+                    maze.at(i).at(j) = 1;
+                }
+            }
+        }  
+
+        // for(int a = 0; a < index_integers.size(); a += rand(1,3)){
         //     std::vector<std::pair<int , int>> index_branch;
         //     int Row = index_integers.at(a).first;
         //     int Colum = index_integers.at(a).second;
-        //     for(int k = 0; k < rand(2,4); ++k){
-        //         if(box_iteration(Row, Colum) >= 3){
-        //             continue;
-        //         }else{
+        //     if(box_iteration(Row, Colum) <= 1){
+        //         AddToPath(Row, Colum);
 
-        //             int m = rand(2,4);
-        //             index_branch = AddToPath(Row, Colum, m);
-        //                 for(int b = 0; b < index_branch.size(); ++b){
-        //                     Row = index_branch.at(b).first;
-        //                     Colum = index_branch.at(b).second;
-        //                     if(box_iteration(Row, Colum) >= 3){
-        //                         continue;
-        //                     }else{ 
-        //                         m = rand(2,4);
-        //                         index_branch = AddToPath(Row, Colum, m);
-
-        //                     }
+        //     }
 
 
-        //                 }
-        //             }
-        //         }
-        //    }      
+
+
+        // }
             
 }   
         
@@ -136,17 +135,16 @@ int Maze::box_iteration(int Row, int Colum){
     return n;
 }
 
-std::vector<std::pair<int, int>> Maze::AddToPath(int Row, int Colum, int m) {
-    std::vector<std::pair<int, int>> index_branch;
-
-    while (m > 0) {
+void Maze::AddToPath(int Row, int Colum) {
+    bool a = true;
+    while (a) {
         int n = rand(1, 8); // tilfeldig tall fra 1 til 7
 
         try {
             if (n == 1) {
                 maze.at(Row + 1).at(Colum) = 1;
                 Row += 1;
-            } else if (n == 2 || n == 6  ) {
+            } else if (n == 2 || n == 6 || n == 7 ) {
                 maze.at(Row).at(Colum + 1) = 1;
                 Colum += 1;
             } else if (n == 3 || n == 7) {
@@ -157,14 +155,25 @@ std::vector<std::pair<int, int>> Maze::AddToPath(int Row, int Colum, int m) {
                 Colum -= 1;
             }
 
-            index_branch.push_back(std::pair<int, int>(Row, Colum));
-            m--;
+            
         }
         catch (...) {
             // Hvis vi går utenfor grensene, bare hopp til neste iterasjon
             continue;
         }
+        if(box_iteration(Row, Colum) >= 2 or Row == 1 or Colum == 1 or Row == (size - 1) or Colum ==(size - 1)){
+            a = false;
+        }
+        
     }
 
-    return index_branch;
+    
+}
+
+
+bool Maze::checkIfOneOrZero(int x_pos, int y_pos) const{
+    if (maze.at(x_pos).at(y_pos) == 1){
+        return true;
+    }
+    return false;
 }
