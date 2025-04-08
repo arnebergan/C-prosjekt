@@ -10,11 +10,9 @@ int Maze::rand(int lowerlimit, int upperlimit){
 
 Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)){// fyller først hele matrisen med 0  
     
-    
     int j = rand(0, size);
     maze.at(0).at(j) = 1; //Velger en start plass tilfeldig
     
-   
     bool a = true;
     int i = 0;
     int n = 0;
@@ -47,7 +45,6 @@ Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)){// fyller
                 index_integers.push_back(std::pair<int, int>(i, j));
         } 
         }
-
         
         catch(...){ // Hvis den er ute av indeksene skal den bare fortsette og prøve på nytt
             cout << "Gikk utenfor mappet\t";
@@ -61,8 +58,6 @@ Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)){// fyller
             }
         } 
     }
-    
-
   
         for(int i = 0; i < size; ++i){ //Forslag til tilfeldig generering 
             for(int j = 0; j < size; ++j){
@@ -84,10 +79,6 @@ Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)){// fyller
         //         AddToPath(Row, Colum);
 
         //     }
-
-
-
-
         // }
             
 }   
@@ -107,7 +98,6 @@ std::ostream& operator<<(std::ostream& os, const Maze& rhs){
     }
     return os;  
 }
-
 
 int Maze::box_iteration(int Row, int Colum){
     this-> maze;
@@ -156,7 +146,7 @@ void Maze::AddToPath(int Row, int Colum) {
     }
 }
 
-bool Maze::checkIfOneOrZero(int x_pos, int y_pos) const{
+bool Maze::checkIfOne(int x_pos, int y_pos) const{
     if (maze.at(x_pos).at(y_pos) == 1){
         return true;
     }

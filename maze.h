@@ -17,7 +17,7 @@ class Maze{
     int getsize() const;
     int box_iteration(int Row, int Colum);
     void AddToPath(int Row, int Colum);
-    bool checkIfOneOrZero(int x_pos, int y_pos) const;
+    bool checkIfOne(int x_pos, int y_pos) const;
  
     friend std::ostream& operator<<(std::ostream& os, const Maze& rhs);
 };

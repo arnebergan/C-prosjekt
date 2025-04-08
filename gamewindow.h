@@ -6,7 +6,11 @@
 
 class Map : public TDT4102::AnimationWindow{
 
+    private:
+    Maze maze;
+    
     public:
+    
     
     // static constexpr int x_start_window = 50;
     // static constexpr int y_start_window = 50;
@@ -14,7 +18,7 @@ class Map : public TDT4102::AnimationWindow{
     // static constexpr int height = 768;
     // static constexpr string title = "Mashalla";
     
-    Map(TDT4102::Point position, int width, int height, const string& title); // Constructer
+    Map(TDT4102::Point position, int width, int height, const string& title, int size); // Constructer
 
     TDT4102::Button quitBtn;
 

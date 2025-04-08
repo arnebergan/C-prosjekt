@@ -10,7 +10,7 @@ int Character::getY(){
 }
 
 bool Character::checkIfOutsideMaze(Maze maze, int i, int j){
-    if (maze.checkIfOneOrZero (i, j)){
+    if (maze.checkIfOne (i, j)){
         return true;
     }
     return false;
