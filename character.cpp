@@ -3,10 +3,9 @@
 
 Character::Character (Maze maze){
     
-    index_character.first = maze.getStart_position();
-    index_character.second = maze.getsize();
+    this->index_character.first = maze.getStart_position();
+    this->index_character.second = maze.getsize()-1;
 }
-
 
 
 std::pair<int, int> Character::getIndexCharacter (){
@@ -22,7 +21,7 @@ bool Character::checkIfOutsideMaze(Maze maze, std::pair<int, int> index_characte
 }
 
 bool Character::checkIfWin (Maze maze, int index_character_y){
-    if (index_character_y ==  0 ){
+    if (index_character_y == 0 ){
         return true;
     }
 return false;
@@ -33,7 +32,7 @@ void Character::left (){
 }
 
 void Character::right (){
-    this->index_character.first +=1;
+    index_character.first +=1;
 
 }
 void Character::up (){

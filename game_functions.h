@@ -6,5 +6,5 @@
 #include "gamewindow.h"
 
 
-void move(Character character, Map map, bool isMoving);
+void move(Character &character, Map &map, Maze maze, std::pair<int, int> index_character, bool &isMoving);
 

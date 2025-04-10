@@ -153,8 +153,9 @@ void Maze::AddToPath(int Row, int Colum) {
 }
 
 bool Maze::checkIfOne(int x_pos, int y_pos) const{
-    if (maze.at(x_pos).at(y_pos) == 1){
-        return true;
-    }
-    return false;
+    // if (maze.at(x_pos).at(y_pos) == 1){
+    //     return true;
+    // }
+    // return false;
+    return maze.at(x_pos).at(y_pos);
 }
