@@ -8,10 +8,15 @@ int Maze::rand(int lowerlimit, int upperlimit){
     return n;
 }
 
-Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)){// fyller først hele matrisen med 0  
+int Maze::getStart_position (){
+    return start_position;
+}
+
+
+Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)), start_position(rand(0, size)) {// fyller først hele matrisen med 0  
     
-    int j = rand(0, size);
-    maze.at(0).at(j) = 1; //Velger en start plass tilfeldig
+    // int start_position = rand(0, size);
+    maze.at(0).at(start_position) = 1; //Velger en start plass tilfeldig
     
     bool a = true;
     int i = 0;
@@ -25,24 +30,24 @@ Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)){// fyller
         n = rand(0, 8);
         try{
         if(n == 0 || n == 4 || n == 5 || n == 8){ //et steg fram
-                maze.at(i+1).at(j)= 1;
+                maze.at(i+1).at(start_position)= 1;
                 i += 1;
-                index_integers.push_back(std::pair<int, int>(i, j));
+                index_integers.push_back(std::pair<int, int>(i, start_position));
         }else if(n == 1|| n == 6){  // et steg til høyre
-                maze.at(i).at(j+1) = 1;
-                j += 1;
-                index_integers.push_back(std::pair<int, int>(i, j));
+                maze.at(i).at(start_position+1) = 1;
+                start_position += 1;
+                index_integers.push_back(std::pair<int, int>(i, start_position));
            
         }else if(n == 2 ||  n == 7){ // et steg til venstre
             
-                maze.at(i).at(j-1) = 1;
-                j -= 1;
-                index_integers.push_back(std::pair<int, int>(i, j));
+                maze.at(i).at(start_position-1) = 1;
+                start_position -= 1;
+                index_integers.push_back(std::pair<int, int>(i, start_position));
            
         }else if(n == 3 ){ // et steg tilbake
-                maze.at(i-1).at(j) = 1;
+                maze.at(i-1).at(start_position) = 1;
                 i -= 1;
-                index_integers.push_back(std::pair<int, int>(i, j));
+                index_integers.push_back(std::pair<int, int>(i, start_position));
         } 
         }
         
@@ -80,6 +85,7 @@ Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)){// fyller
 
         //     }
         // }
+        cout << " Fornuftig??:: " << start_position << endl; 
             
 }   
 

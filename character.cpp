@@ -23,6 +23,3 @@ bool Character::checkIfOutsideMaze(Maze maze, int i, int j){
     return false;
     }
 
-void Character::move(){
-    
-}

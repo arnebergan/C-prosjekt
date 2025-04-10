@@ -6,6 +6,7 @@
 class Maze{
     private:
     int size;
+    int start_position;
     
     public:
     std::vector<std::vector<int>> maze;
@@ -13,7 +14,7 @@ class Maze{
 
 
     int rand(int lowerlimits, int upperlimits);
-
+    int getStart_position ();
     int getsize() const;
     int box_iteration(int Row, int Colum);
     void AddToPath(int Row, int Colum);

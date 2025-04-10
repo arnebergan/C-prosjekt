@@ -8,7 +8,10 @@ class Map : public TDT4102::AnimationWindow{
 
     private:
     Maze maze;
-    
+    int size;
+    int start_position; //startposition
+    TDT4102::Point circle_pointer;
+
     public:
     
     
@@ -18,9 +21,16 @@ class Map : public TDT4102::AnimationWindow{
     // static constexpr int height = 768;
     // static constexpr string title = "Mashalla";
     
-    Map(TDT4102::Point position, int width, int height, const string& title, int size); // Constructer
+    Map(TDT4102::Point position, int width, int height, const string& title, int size, Maze maze); // Constructer
 
+    void drawMaze ();
     TDT4102::Button quitBtn;
+
+    void drawPosition();
+    void moveLeft();
+    void moveRight();
+    void moveUp();
+    void moveDown();
 
     void quitBtn_2 ();
 

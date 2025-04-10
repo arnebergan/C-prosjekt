@@ -15,6 +15,6 @@ class Character{
     bool checkIfOutsideMaze (Maze maze, int x, int y);
     bool checkIfWin (Maze maze, int y);
     void draw();
-    void move();
-
+    
+    
 };
