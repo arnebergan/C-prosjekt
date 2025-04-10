@@ -18,6 +18,7 @@ void Map::quitBtn_2(){
 }
 
 void Map::drawMaze() {
+    // Draw the square around the maze
 TDT4102::Point point_up_left {167, 39};
 TDT4102::Point point_up_right {168+688, 39};
 TDT4102::Point point_down_left {167, 40+688};
@@ -47,11 +48,11 @@ for (int i = 0; i<maze.getsize(); i++){
         }else{
             draw_rectangle(pos, square_size, square_size, fill_color_zero);
         }
-    x_position += delta;
+        x_position += delta;
     
     }
-x_position = x_position_start; 
-y_position +=delta;
+    x_position = x_position_start; 
+    y_position += delta;
 }
 }
 
@@ -63,7 +64,6 @@ void Map::drawPosition(){
     draw_circle(circle_pointer, 8, circle_color);
     
 }
-
 
 void Map::moveLeft(){
     circle_pointer = {circle_pointer.x-16, circle_pointer.y};

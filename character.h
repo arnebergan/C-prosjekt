@@ -6,15 +6,15 @@
 class Character{
 
     private:
-    int x;
-    int y;    // Posisjon 2, i og j.
+    std::pair<int, int> index_character; 
+
     public:
-    Character (Maze maze, int x, int y);
-    int getX ();
-    int getY();
-    bool checkIfOutsideMaze (Maze maze, int x, int y);
-    bool checkIfWin (Maze maze, int y);
-    void draw();
-    
-    
+    Character (Maze maze);
+    std::pair<int, int> getIndexCharacter ();
+    bool checkIfOutsideMaze (Maze maze, std::pair<int, int> index_character);
+    bool checkIfWin (Maze maze, int index_character_y);
+    void left ();
+    void right ();
+    void up ();
+    void down();
 };

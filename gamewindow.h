@@ -9,7 +9,6 @@ class Map : public TDT4102::AnimationWindow{
     private:
     Maze maze;
     int size;
-    int start_position; //startposition
     TDT4102::Point circle_pointer;
 
     public:

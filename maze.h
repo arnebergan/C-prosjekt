@@ -20,5 +20,5 @@ class Maze{
     void AddToPath(int Row, int Colum);
     bool checkIfOne(int x_pos, int y_pos) const;
  
-    friend std::ostream& operator<<(std::ostream& os, const Maze& rhs);
+    friend std::ostream& operator<<(std::ostream& os, const Maze& rhs); // overwrite to print out maze
 };

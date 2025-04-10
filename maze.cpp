@@ -23,7 +23,7 @@ Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)), start_po
     int n = 0;
     std::vector<std::pair<int, int>> index_integers; 
 
-    // i og j er nå med på å holde styr over hvor vi er i matrisen. skal være indexen vår
+    // i og start_position er nå med på å holde styr over hvor vi er i matrisen. skal være indexen vår
     cout << "starting to make maze: " << endl;
     while(a){
         
