@@ -15,7 +15,6 @@ int Maze::getStart_position (){
 
 Maze::Maze(int size):size(size), maze(size, std::vector<int>(size, 0)), start_position(rand(0, size)) {// fyller først hele matrisen med 0  
     
-    // int start_position = rand(0, size);
     maze.at(0).at(start_position) = 1; //Velger en start plass tilfeldig
     
     bool a = true;
@@ -124,7 +123,7 @@ int Maze::box_iteration(int Row, int Colum){
 void Maze::AddToPath(int Row, int Colum) {
     bool a = true;
     while (a) {
-        int n = rand(1, 8); // tilfeldig tall fra 1 til 7
+        int n = rand(1, 8); // tilfeldig tall fra 1 til 8
 
         try {
             if (n == 1) {
@@ -153,9 +152,5 @@ void Maze::AddToPath(int Row, int Colum) {
 }
 
 bool Maze::checkIfOne(int x_pos, int y_pos) const{
-    // if (maze.at(x_pos).at(y_pos) == 1){
-    //     return true;
-    // }
-    // return false;
     return maze.at(x_pos).at(y_pos);
 }

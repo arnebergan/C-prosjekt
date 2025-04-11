@@ -14,7 +14,7 @@ double Fil::getNerds(const string& username) const{
 }
 
 void Fil::saveToFile (const string& filename){
-    ofstream outFile(filename);
+    ofstream outFile(filename, ios_base::app);
     if (!outFile){
         cout << "You didn't open the file...";
         return;
