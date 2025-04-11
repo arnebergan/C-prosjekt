@@ -1,0 +1,13 @@
+Refleksjonsnotat Arne:
+
+Prosjektet startet med at vi ønsket og utvikle et enkelt spill og vi tenkte i retning av Crossy road. 
+Da er det enkleste å starte med en enkel matrise også kan man legge til flere ting etter hvert om vi fikk tid. 
+Etter råd fra Bart i forlesning bare startet vi der med Maze klassen og tok utfordringer og videre design som det kom. 
+Da hadde man begynt og kom på underveis hvordan man ønsket og dele opp ting osv. 
+Totalt sett fikk man også en større sammenheng på ting, nå som man faktisk måtte lage ting fra bunnen av. 
+Etter en del tid brukt på veldig dumme feil og litt problemer rundt å få samlet ting fikk vi til slutt sammen et program som kjører og gjør det vi vil. 
+Det er også nå relativt enkelt å utvikle programmet mer ved å legge til forskjellige ting, noe vi desverre ikke har tid til nå, men kan vurdere i senere tid.
+
+
+
+
