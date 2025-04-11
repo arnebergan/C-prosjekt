@@ -3,7 +3,6 @@
 #include "map.h"
 #include "game_functions.h"
 #include "fil.h"
-#include "character.h"
 
 int main() {
     Fil fil;

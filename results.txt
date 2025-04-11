@@ -7,3 +7,7 @@ blaa: 10.2686
 br: 9.99722
 bergan: 10.908
 lala: 11.6608
+bergasss: 10.7722
+beje: 9.69149
+hejeh: 8.45804
+bakal: 9.54044

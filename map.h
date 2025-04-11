@@ -1,10 +1,9 @@
 #pragma once
 #include "AnimationWindow.h"
-#include "maze.h"
 #include "widgets/Button.h" 
+#include "maze.h"
 #include "character.h"
 #include "fil.h"
-#include "game_functions.h"
 
 
 

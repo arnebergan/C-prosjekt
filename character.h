@@ -1,7 +1,6 @@
 #pragma once
 #include "std_lib_facilities.h"
 #include "maze.h"
-#include "map.h"
 
 
 class Character{
