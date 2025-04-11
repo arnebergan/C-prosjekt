@@ -1,4 +1,4 @@
-Refleksjonsnotat Arne:
+Refleksjonsnotat, Arne Bergan:
 
 Prosjektet startet med at vi ønsket og utvikle et enkelt spill og vi tenkte i retning av Crossy road. 
 Da er det enkleste å starte med en enkel matrise også kan man legge til flere ting etter hvert om vi fikk tid. 
@@ -8,6 +8,15 @@ Totalt sett fikk man også en større sammenheng på ting, nå som man faktisk m
 Etter en del tid brukt på veldig dumme feil og litt problemer rundt å få samlet ting fikk vi til slutt sammen et program som kjører og gjør det vi vil. 
 Det er også nå relativt enkelt å utvikle programmet mer ved å legge til forskjellige ting, noe vi desverre ikke har tid til nå, men kan vurdere i senere tid.
 
-
+Refleksjonsnotat, Gabriel Steeneveldt:
+Målet med prosjektet var å få mest mulig trening i å strukturere og bruke klasser på 
+egenhånd, samt å lære seg mest mulig AnimationWindow. Selve prosjektet er et spill 
+konsept hvor det er om å bevege seg gjennom en slags labyrint. Algoritmen for å 
+opprette labyrinten kunne ha blitt bedre og kunne gjøres bedre hvis med tid hadde blitt 
+investert. Selve gamelogikken/funksjonaliteten fungerer akkurat slik som den skal. Det 
+blir og opprettet en resultat.txt fil som tillater spillere å skrive inn brukernavn og lagre 
+tiden de brukte på å fullføre “labyrinten”. Var underveis et lite forsøk å skrive labyrint 
+algoritmen slik at den justerte seg basert på tidligere utvikling, men ble satt på hylla 
+siden det ble for vanskelig.
 
 
