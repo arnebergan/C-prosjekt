@@ -1,8 +1,9 @@
 #include "maze.h"
 #include "std_lib_facilities.h"
-#include "gamewindow.h"
+#include "map.h"
 #include "game_functions.h"
 #include "fil.h"
+#include "character.h"
 
 int main() {
     Fil fil;

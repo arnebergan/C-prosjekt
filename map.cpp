@@ -1,4 +1,4 @@
-#include "gamewindow.h"
+#include "map.h"
 
 
 Map::Map(TDT4102::Point position, int width, int height, const string& title, int size, Maze maze):

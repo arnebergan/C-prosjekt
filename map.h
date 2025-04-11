@@ -1,8 +1,12 @@
 #pragma once
 #include "AnimationWindow.h"
 #include "maze.h"
-#include "character.h" // just in case
 #include "widgets/Button.h" 
+#include "character.h"
+#include "fil.h"
+#include "game_functions.h"
+
+
 
 class Map : public TDT4102::AnimationWindow{
 

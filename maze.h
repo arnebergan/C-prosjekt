@@ -2,6 +2,8 @@
 #include <vector>
 #include <random>
 #include "std_lib_facilities.h"
+#include "map.h"
+#include "character.h"
 
 class Maze{
     private:

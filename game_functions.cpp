@@ -1,7 +1,6 @@
 #include "game_functions.h"
 
 
-
 void move(Character &character, Map &map, Maze maze, std::pair<int, int> index_character, bool &isMoving){
     
     if (map.is_key_down(KeyboardKey::LEFT)){

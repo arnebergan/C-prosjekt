@@ -3,7 +3,7 @@
 #include "maze.h"
 #include "AnimationWindow.h"
 #include "std_lib_facilities.h"
-#include "gamewindow.h"
+#include "map.h"
 #include <chrono>
 
 // This class abstracts some (somewhat) nasty code that is
